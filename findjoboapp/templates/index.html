@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Jobo</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'  %}">
+    <script src="{% static 'script.js' %}" defer></script>
+</head>
+<body>
+    <div id="navigation-bar">
+        <img class="logo" src="{% static 'images/logo.png' %}">
+        
+
+    </div>
+    <img id="hero" src="{% static 'images/hero.png' %}">
+    <h1>Find an <span class="purple-text">intern role</span> in a click</h1>
+    <h3>Get access to entry level positions across Africa.</h3>
+    <div id="city-filter">
+        <h3 style="margin: 0; margin: auto;">Filter roles in</h3>
+        <select name="Cities" id="cities-dropdown" style="background-image: url('{% static 'images/caret-down.svg' %}');">
+            <option id="selected-city" current-city="{{selected_city}}" selected>{{selected_city}}</option>
+            {% for city in cities%}
+
+                <option id="selected-city" current-city="{{city.name}}" >{{city.name}}</option>
+                
+            {% endfor %}
+
+          </select>
+    </div>
+    <div style="height: 2em;"></div>
+
+    <br>
+    <!-- <div id="category-tabs">
+    
+            {% for category in categories %}
+            <div class="category-container">
+                <h3 >{{category.name}}</h3>
+            </div>
+               
+            {% endfor %}
+        
+    </div> -->
+    <div id="jobs-section">
+       {% for job in jobs %}
+      
+       
+       <a href="{{job.application_url}}">
+        <div class="job-container">
+            <div class="job-header-section">
+                <img class="employer-logo" src="{{job.company_logo.url }}">
+                <div class="job-basics">
+                    <h4>{{job.title}}</h4>
+                    <h5>{{job.company}}</h5>
+                    <h6 style="text-transform: capitalize;">{{job.city}}</h6>
+                </div>
+            </div>
+            <h5 style="margin-left: 1em; opacity: 0.7;"> Job Details</h5>
+            <div class="job-details-section">
+                <p >{{job.description|safe}}</p>
+            </div>
+            </div>
+       </a>
+       {% endfor %}
+
+    </div>
+    <div id="footer">
+        <img class="logo" id="footer-logo" src="{% static 'images/logo-footer.png' %}">
+        <p>A product of</p>
+        <img class="logo" id="kreate-footer-logo" src="{% static 'images/kreate-logo.png' %}">
+    </div>
+   
+</body>
+</html>

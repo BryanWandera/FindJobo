@@ -1,0 +1,241 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    text-align: center;
+    font-family: sans-serif;
+    
+    
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+h1 {
+    font-size: 4em;
+}
+h3 {
+    font-size: 2em;
+    color: black;
+    opacity: 0.8;
+    font-weight: normal;
+}
+select {
+    padding: 10px;
+    padding-right: 30px;
+    font-size: 0.8em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    text-transform: capitalize;
+    
+      background-repeat: no-repeat, repeat;
+      background-position: right .7em top 50%, 0 0;
+      background-size: 1em auto, 100%;
+  }
+option {
+    text-transform: capitalize;
+}
+#navigation-bar {
+    width: 100%;
+    text-align: left;
+   
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+
+}
+.logo {
+    display: inline-block;
+    width: 13em;
+}
+#hero {
+    width: 40vw;
+    margin-top: 5VW;
+}
+.purple-text {
+    color: #7559B6;
+}
+@media  screen and (max-width: 800px) {
+    #hero {
+        width: 70vw;
+    }
+    .logo {
+        display: inline-block;
+        width: 10em;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+}
+#city-filter {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+    column-gap: 0.5em;
+    font-size: 0.8em;
+   
+}
+#city-filter h3 {
+    opacity: 0.5;
+}
+#cities-dropdown {
+    border: none;
+    height: fit-content;
+    background-color: transparent;
+    font-size: 2em;
+    font-weight: bold;
+    color: #7559B6;
+    
+}
+#category-tabs {
+    display: inline-grid ;
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 1.5em;
+    
+    
+    
+}
+#category-tabs  h3{
+    color: black;
+    opacity: 0.5;
+    margin: 0;
+    font-size: 1.25em;
+}
+
+.category-container {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #938F99; 
+    border-radius: 17px ;
+    padding: 0;
+    padding-inline: 1.5em;
+    padding-block: 1em;
+}
+.category-container:hover {
+    cursor: pointer;
+    border-width: 3px;
+
+}
+#jobs-section {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 5vw;
+    margin-inline: 5em ;
+    column-gap: 2em;
+    row-gap: 2em;
+   
+
+}
+.employer-logo {
+    width: 2.5em;
+    margin-block: auto;
+    display: inline-block;
+    margin-left: 1em;
+    margin-block: 1.5em;
+    
+}
+.job-basics {
+    margin-block: 1.5em;
+}
+.job-container {
+    text-align: left;
+    background-color: #FFFBFE;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px ;
+    border-radius: 8.5px;
+    overflow: hidden;
+    
+
+}
+.job-container:hover {
+    opacity: 0.5;
+}
+.job-container h4, h5, h6 {
+    margin: 0;
+}
+.job-container h4 {
+    font-weight: 500;
+    margin-bottom: 0.2em;
+    opacity: 0.7;
+}
+.job-container h5{
+    font-weight: 600;
+    margin-bottom: 0.2em;
+    opacity: 0.7;
+}
+.job-container h6{
+    font-weight: 200;
+    margin-bottom: 0.2em;
+}
+.job-header-section {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin-bottom: 1.5em;
+    text-align: left;
+   overflow: hidden;
+    background-color: #E9E3F1;
+    
+}
+.job-details-section {
+    max-height: 20em;
+    min-height: 20em;
+    overflow: hidden;
+    margin-bottom: 1.5em;
+}
+.job-container p {
+    margin-inline: 1em;
+    opacity: 0.7;
+    
+}
+@media  screen and (max-width: 800px) {
+    #category-tabs  h3 {
+        font-size: 1em;
+    }
+    
+}
+@media screen and (max-width: 1000px) {
+    #jobs-section {
+        grid-template-columns: auto auto;
+        margin-inline: 4em;
+    }
+}
+@media screen and (max-width: 750px) {
+    #jobs-section {
+        grid-template-columns: auto;
+        margin-inline: 1em;
+    }
+}
+#footer-logo
+
+{
+    margin-left: 2em;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+#kreate-footer-logo {
+    width: 6em;
+    margin-left: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 4em;
+}
+#footer {
+    margin-top: 5em;
+    background-color:  #6750A4;
+  
+    text-align: left;
+    color: white;
+}
+#footer p {
+    margin: 0;
+    margin-left: 2em;
+}
