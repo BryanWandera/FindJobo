@@ -5,7 +5,7 @@ databases:
 
 services:
   - type: web
-    name: mysite
+    name: findjobo
     env: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn findjobo.wsgi:application"
