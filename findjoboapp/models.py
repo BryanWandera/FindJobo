@@ -22,7 +22,7 @@ class Category(models.Model):
 
 
 class Job(models.Model):
-    id = models.TextField(primary_key=True)
+    
     title = models.TextField(max_length=100, blank=False)
     description = RichTextField()
     company = models.TextField(max_length=50, blank=False)
