@@ -1,6 +1,8 @@
 
 
 from pathlib import Path
+import cloudinary
+import cloudinary_storage
 import os
 import dj_database_url
 import sys
@@ -31,6 +33,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djrichtextfield',
     'findjoboapp',
+    'cloudinary_storage',
+    'cloudinary'
+   
     
 ]
 
@@ -146,8 +151,17 @@ os.path.join(BASE_DIR,'static'), ]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'bryanwandera',
+    'API_KEY': '231629676587995',
+    'API_SECRET': 'hcf0arJ3p1zhTsewOx0E3zDcjtY',
+
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # # HTTPS Settings
