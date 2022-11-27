@@ -27,8 +27,8 @@ class Job(models.Model):
     description = RichTextField()
     company = models.TextField(max_length=50, blank=False)
     company_logo = models.ImageField(blank=False)
-    city = models.ForeignKey(City, null=True, blank=True, on_delete= models.PROTECT)
-    category = models.ForeignKey(Category,null=True, blank=True, on_delete= models.PROTECT)
+    city = models.ForeignKey(City, null=True, blank=True, unique=False, on_delete= models.PROTECT)
+    category = models.ForeignKey(Category,null=True, unique=False, blank=True, on_delete= models.PROTECT)
     application_url = models.URLField()
 
     def __str__(self):
