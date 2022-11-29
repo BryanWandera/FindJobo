@@ -8,8 +8,23 @@
     <title>Find Jobo</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="{% static 'style.css'  %}">
     <script src="{% static 'script.js' %}" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K533RGV9EX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K533RGV9EX');
+</script>
+
 </head>
 <body>
     <div id="navigation-bar">
@@ -59,7 +74,7 @@
                     <h6 style="text-transform: capitalize;">{{job.city}}</h6>
                 </div>
             </div>
-            <h5 style="margin-left: 1em; opacity: 0.7;"> Job Details</h5>
+            <!-- <h5 style="margin-left: 1em; opacity: 0.7;"> Job Details</h5> -->
             <div class="job-details-section">
                 <p >{{job.description|safe}}</p>
             </div>

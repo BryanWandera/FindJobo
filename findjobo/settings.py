@@ -18,8 +18,10 @@ SECRET_KEY = 'django-insecure-%tvvy4*lswdg3pl78(n7=uz#b94=39@y4+@@*oem$0%i_=l943
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
+# DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['findjobo.com', 'www.findjobo.com', 'hammerhead-app-vwmqm.ondigitalocean.app']
 
 
 # Application definition
@@ -71,9 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'findjobo.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 # DATABASES = {
 #     'default': {
@@ -145,8 +144,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATICFILES_DIRS = [
-os.path.join(BASE_DIR,'static'), ]
+# STATICFILES_DIRS = [
+# os.path.join(BASE_DIR,'static'), ]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -165,14 +164,14 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # # HTTPS Settings
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
 # # HSTS Settings
-# SECURE_HSTS_SECONDS = 31536000  # 1 year
-# SECURE_HSTS_PRELOAD = True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 
 

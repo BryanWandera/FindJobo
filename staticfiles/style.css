@@ -147,6 +147,7 @@ option {
     margin-block: 1.5em;
 }
 .job-container {
+    min-width: 22vw;
     text-align: left;
     background-color: #FFFBFE;
     border-style: solid;
@@ -154,6 +155,7 @@ option {
     border-width: 0.5px ;
     border-radius: 8.5px;
     overflow: hidden;
+    
     
 
 }
@@ -191,9 +193,10 @@ option {
     min-height: 20em;
     overflow: hidden;
     margin-bottom: 1.5em;
+    margin-left: 1em ;
 }
 .job-container p {
-    margin-inline: 1em;
+    margin-inline: 2em;
     opacity: 0.7;
     
 }

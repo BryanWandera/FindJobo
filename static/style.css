@@ -7,7 +7,7 @@ html {
 body {
     overflow-x: hidden;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'DM Sans', sans-serif;
     
     
 }
@@ -53,6 +53,7 @@ option {
 .logo {
     display: inline-block;
     width: 13em;
+    margin-left: 3em;
 }
 #hero {
     width: 40vw;
@@ -151,16 +152,18 @@ option {
     text-align: left;
     background-color: #FFFBFE;
     border-style: solid;
-    border-color: black;
+    border-color: #FFFBFE;
     border-width: 0.5px ;
     border-radius: 8.5px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     overflow: hidden;
     
     
 
 }
 .job-container:hover {
-    opacity: 0.5;
+    
+    box-shadow: 0px 0.5px 2.5px rgba(0,0,0,0.2);
 }
 .job-container h4, h5, h6 {
     margin: 0;
@@ -193,10 +196,10 @@ option {
     min-height: 20em;
     overflow: hidden;
     margin-bottom: 1.5em;
-    margin-left: 1em ;
+    margin-inline: 1em ;
 }
 .job-container p {
-    margin-inline: 2em;
+    
     opacity: 0.7;
     
 }
