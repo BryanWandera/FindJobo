@@ -68,7 +68,8 @@ option {
     }
     .logo {
         display: inline-block;
-        width: 10em;
+        width: 7em;
+        margin-left: 1em;
     }
     h1 {
         font-size: 3em;
