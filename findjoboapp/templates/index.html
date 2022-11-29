@@ -8,6 +8,20 @@
     <title>Find Jobo</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
 
+   
+    <meta name="description" content="Internship roles for students">
+    <meta property="og:image" content="{% static 'images/og-image.png' %}">
+    <meta name="twitter:card" content="summary">
+    </meta>
+    <meta name="twitter:title" content="FindJobo">
+    </meta>
+    <meta name="twitter:site" content="">
+    </meta>
+    <meta name="twitter:description" content="High Quality Internships for Students">
+    </meta>
+    <meta name="twitter:image" content="{% static 'images/og-image.png' %}">
+    </meta>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -37,7 +51,7 @@
     <h3>Get access to entry level positions across Africa.</h3>
     <div id="city-filter">
         <h3 style="margin: 0; margin: auto;">Filter roles in</h3>
-        <select name="Cities" id="cities-dropdown" style="background-image: url('{% static 'images/caret-down.svg' %}');">
+        <select name="Cities" id="cities-dropdown" style="background-image: url('{% static 'images/caret-down.svg' %}'); font-family: 'DM Sans', sans-serif;">
             <option id="selected-city" current-city="{{selected_city}}" selected>{{selected_city}}</option>
             {% for city in cities%}
 
@@ -65,18 +79,18 @@
       
        
        <a href="{{job.application_url}}">
-        <div class="job-container">
+        <div class="job-container" itemscope itemtype="https://schema.org/JobPosting">
             <div class="job-header-section">
                 <img class="employer-logo" src="{{job.company_logo.url }}">
                 <div class="job-basics">
-                    <h4>{{job.title}}</h4>
-                    <h5>{{job.company}}</h5>
-                    <h6 style="text-transform: capitalize;">{{job.city}}</h6>
+                    <h4 itemprop="title">{{job.title}}</h4>
+                    <h5 itemprop="hiringOrganization">{{job.company}}</h5>
+                    <h6 style="text-transform: capitalize;" itemprop="jobLocation">{{job.city}}</h6>
                 </div>
             </div>
             <!-- <h5 style="margin-left: 1em; opacity: 0.7;"> Job Details</h5> -->
-            <div class="job-details-section">
-                <p >{{job.description|safe}}</p>
+            <div class="job-details-section" itemprop="description">
+                {{job.description|safe}}
             </div>
             </div>
        </a>
