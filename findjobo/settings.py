@@ -17,11 +17,12 @@ SECRET_KEY = 'django-insecure-%tvvy4*lswdg3pl78(n7=uz#b94=39@y4+@@*oem$0%i_=l943
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = os.getenv("DEBUG", "False") == "True"
-# DEBUG = True
+# DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['findjobo.com', 'www.findjobo.com', 'hammerhead-app-vwmqm.ondigitalocean.app']
+# ALLOWED_HOSTS = ['findjobo.com', 'www.findjobo.com', 'hammerhead-app-vwmqm.ondigitalocean.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -33,10 +34,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'djrichtextfield',
     'findjoboapp',
     'cloudinary_storage',
-    'cloudinary'
+    'cloudinary',
+    
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    
    
     
 ]
@@ -66,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -74,27 +84,79 @@ TEMPLATES = [
 WSGI_APPLICATION = 'findjobo.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
+
+
+SITE_ID = 1
+
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         # For each OAuth based provider, either add a ``SocialApp``
+#         # (``socialaccount`` app) containing the required client
+#         # credentials, or list them here:
+#         'APP': {
+#             'client_id': '960139798629-q50qjq5r8bn4c7eja0r04o0ldq4fq8rj.apps.googleusercontent.com',
+#             'secret': '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',
+#             'key': ''
+#         }
 #     }
 # }
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+# social account provuders for development
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '960139798629-kib05d75uqir70lgddtah1gg6j5mrt7p.apps.googleusercontent.com',
+            'secret': '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',
+            'key': 'AIzaSyCqPh_-x66NDgDsu2vewuv8_TV4Tn7mdc8'
+        }
+    },
+    'github': {
+        
+        'APP': {
+            'client_id': '54aaba8c8e7471ebfa9f',
+            'secret': '2f8257b85472637318518819889ad571ca1641b2',
+            'key': ''
         }
     }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }                
+}
+LOGIN_URL = "https://www.findjobo.com"
+LOGIN_REDIRECT_URL = "/"
+
+# DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+
+# if DEVELOPMENT_MODE is True:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#         }
+#     }
+# elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+#     if os.getenv("DATABASE_URL", None) is None:
+#         raise Exception("DATABASE_URL environment variable not defined")
+#     DATABASES = {
+#         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+#     }                
 
 
 REFERRER_POLICY = 'origin'
@@ -144,15 +206,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# STATICFILES_DIRS = [
-# os.path.join(BASE_DIR,'static'), ]
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR,'static'), ]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'bryanwandera',

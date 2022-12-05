@@ -55,6 +55,17 @@ option {
     width: 13em;
     margin-left: 3em;
 }
+#log-in {
+    float: right;
+    color: #7559B6;
+    font-size: x-large;
+    margin-right: 1em;
+    margin-top: 0.5em;
+}
+#log-in:hover {
+    color: black;
+    cursor: pointer;
+}
 #hero {
     width: 40vw;
     margin-top: 5VW;

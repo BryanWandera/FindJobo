@@ -13,4 +13,10 @@ def home_view(request, city="nairobi" ):
 
 
 
+def privacy_policy_view(request):
 
+    return render(request, "privacy-policy.html")
+
+def terms_of_service_view(request):
+
+    return render(request, "terms-of-service.html")

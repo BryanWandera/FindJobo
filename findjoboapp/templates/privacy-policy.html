@@ -1,0 +1,62 @@
+{% load static %}
+{% load account %}
+{% user_display user %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Jobo - Privacy Policy</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+
+   
+    <meta name="description" content="Internship roles for students">
+    <meta property="og:image" content="{% static 'images/og-image.png' %}">
+    <meta name="twitter:card" content="summary">
+    </meta>
+    <meta name="twitter:title" content="FindJobo - Privacy Policy">
+    </meta>
+    <meta name="twitter:site" content="">
+    </meta>
+    <meta name="twitter:description" content="High Quality Internships for Students">
+    </meta>
+    <meta name="twitter:image" content="{% static 'images/og-image.png' %}">
+    </meta>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'  %}">
+    <script src="{% static 'script.js' %}" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K533RGV9EX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K533RGV9EX');
+</script>
+
+</head>
+<body>
+    <div id="navigation-bar">
+        <img class="logo" src="{% static 'images/logo.png' %}">
+        <a href="http://127.0.0.1:8000/accounts/google/login/callback/"><h5 id="log-in">Login</h5></a>
+        
+
+    </div>
+    <img id="hero" src="{% static 'images/hero.png' %}">
+    <h1>Privacy Policy</h1>
+   
+    <div id="footer">
+        <img class="logo" id="footer-logo" src="{% static 'images/logo-footer.png' %}">
+        <p>A product of</p>
+        <img class="logo" id="kreate-footer-logo" src="{% static 'images/kreate-logo.png' %}">
+    </div>
+   
+</body>
+</html>
