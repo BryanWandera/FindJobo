@@ -1,0 +1,40 @@
+{% load static %}
+{% load account %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindJobo</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'  %}">
+    <script src="{% static 'script.js' %}" defer></script>
+
+
+</head>
+<body>
+    <div style="height: 25vh;"></div>
+    <h1>🤙 Hey <span class="purple-text">{{request.user.first_name}}.</span></h1>
+    <div id="sign-in-buttons">
+        <form action="/accounts/logout/"><button class="sign-in-button" id="sign-in-with-google-button">Logout</button></form>
+        
+    </div>
+
+    <div style="height: 25vh;"></div>
+
+    <div id="footer">
+        <img class="logo" style="margin-left: 0;" id="footer-logo" src="{% static 'images/logo-footer.png' %}">
+        <a href="/privacy-policy"><p>Privacy Policy</p></a>
+        <a href="/terms-of-service"><p>Terms of Service</p></a>
+        <div style="height: 2em;"></div>
+        <!-- <p>A product of</p> -->
+        <img class="logo"  id="kreate-footer-logo" src="{% static 'images/kreate-logo.png' %}">
+    </div>
+</body>
+</html>
