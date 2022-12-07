@@ -127,6 +127,7 @@ LOGIN_URL = "https://www.findjobo.com"
 LOGIN_REDIRECT_URL = "/"
 SOCIALACCOUNT_LOGIN_ON_GET=True
 ACCOUNT_LOGOUT_ON_GET=True
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
 
 
 # databases  
