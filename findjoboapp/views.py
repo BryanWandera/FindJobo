@@ -8,6 +8,7 @@ def home_view(request, city="nairobi" ):
     
 
     Job.objects.filter(expiry_date__contains=today).delete()
+    Job.objects.filter(expiry_date__lt=today).delete()
 
 
     if request.user.is_authenticated:
