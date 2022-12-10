@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view),
     path('<str:city>/', home_view),
+    path('<str:city>/<str:category>', home_view),
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('accounts/', include('allauth.urls')),
     path('privacy-policy', privacy_policy_view),

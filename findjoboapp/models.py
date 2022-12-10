@@ -14,10 +14,13 @@ class City(models.Model):
         return self.name
 
 class Category(models.Model):
-    name = models.TextField(max_length=50)    
+    name = models.TextField(max_length=50)  
+
+    def save(self, force_insert=False, force_update=False):
+        self.name = self.name.lower()
+        super(Category, self).save(force_insert, force_update)
 
     
-
     def __str__(self):
         return self.name
 

@@ -75,6 +75,19 @@
 
           </select>
     </div>
+    <br/>
+    <div id="category-filter">
+        <h3 style="margin: 0; margin: auto;">Categories</h3>
+        <select name="Cities" id="categories-dropdown" style="background-image: url('{% static 'images/caret-down.svg' %}'); font-family: 'DM Sans', sans-serif;">
+            <option id="selected-category" current-city="{{selected_category}}" selected>{{selected_category}}</option>
+            {% for category in categories %}
+
+                <option id="selected-category" current-city="{{category.name}}" >{{category.name}}</option>
+                
+            {% endfor %}
+
+          </select>
+    </div>
     <div style="height: 2em;"></div>
 
     <br>

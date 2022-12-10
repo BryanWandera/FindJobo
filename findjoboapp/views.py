@@ -2,7 +2,7 @@ from django.shortcuts import render
 from findjoboapp.models import *
 from datetime import date
 
-def home_view(request, city="nairobi" ):
+def home_view(request, city="nairobi", category="finance" ):
 
     today = date.today()
     
@@ -13,15 +13,17 @@ def home_view(request, city="nairobi" ):
 
     if request.user.is_authenticated:
         context = {
-        "jobs" : Job.objects.filter(city__name=city.lower()) ,
+        "jobs" : Job.objects.filter(city__name=city.lower(), category__name=category.lower()) ,
         "selected_city" : city,
+        "selected_category": category,
         "categories": Category.objects.all(),
         "cities" : City.objects.all()
     }
     else:
         context = {
-        "jobs" : Job.objects.filter(city__name=city.lower())[:3] ,
+        "jobs" : Job.objects.filter(category__name=category.lower(), city__name=city.lower())[:3] ,
         "selected_city" : city,
+        "selected_category": category,
         "categories": Category.objects.all(),
         "cities" : City.objects.all()
     }
