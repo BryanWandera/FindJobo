@@ -1,5 +1,6 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
+from datetime import datetime
 
 
 class City(models.Model):
@@ -30,11 +31,9 @@ class Job(models.Model):
     city = models.ForeignKey(City, null=True, blank=True, unique=False, on_delete= models.PROTECT)
     category = models.ForeignKey(Category,null=True, unique=False, blank=True, on_delete= models.PROTECT)
     application_url = models.URLField()
+    expiry_date = models.DateField(null=False, blank=False, default=datetime.now)
+
 
     def __str__(self):
         return self.title
 
-
-# class SavedJob(models.Model):
-#     user   
-#     job 

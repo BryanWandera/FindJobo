@@ -1,7 +1,14 @@
 from django.shortcuts import render
 from findjoboapp.models import *
+from datetime import date
 
 def home_view(request, city="nairobi" ):
+
+    today = date.today()
+    
+
+    Job.objects.filter(expiry_date__contains=today).delete()
+
 
     if request.user.is_authenticated:
         context = {
